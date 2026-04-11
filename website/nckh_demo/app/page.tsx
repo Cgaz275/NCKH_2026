@@ -1,65 +1,47 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="page-wrapper">
+      {/* Header */}
+      <header className="site-header">
+        <div className="header-logo-block">
+          <svg
+            width="40"
+            height="35"
+            viewBox="0 0 40 35"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+            <path
+              d="M20 0H14.1667C12.6196 0 11.1359 0.614581 10.0419 1.70854C8.94796 2.80251 8.33337 4.28624 8.33337 5.83333C8.33337 7.38043 8.94796 8.86416 10.0419 9.95812C11.1359 11.0521 12.6196 11.6667 14.1667 11.6667M20 0V11.6667M20 0H25.8334C26.5994 -1.14149e-08 27.358 0.150883 28.0657 0.444036C28.7734 0.737188 29.4165 1.16687 29.9582 1.70854C30.4998 2.25022 30.9295 2.89328 31.2227 3.60101C31.5158 4.30875 31.6667 5.06729 31.6667 5.83333C31.6667 6.59938 31.5158 7.35792 31.2227 8.06565C30.9295 8.77339 30.4998 9.41645 29.9582 9.95812C29.4165 10.4998 28.7734 10.9295 28.0657 11.2226C27.358 11.5158 26.5994 11.6667 25.8334 11.6667M20 11.6667H14.1667M20 11.6667H25.8334M20 11.6667V23.3333M14.1667 11.6667C12.6196 11.6667 11.1359 12.2812 10.0419 13.3752C8.94796 14.4692 8.33337 15.9529 8.33337 17.5C8.33337 19.0471 8.94796 20.5308 10.0419 21.6248C11.1359 22.7188 12.6196 23.3333 14.1667 23.3333M25.8334 11.6667C25.0673 11.6667 24.3088 11.8175 23.6011 12.1107C22.8933 12.4039 22.2503 12.8335 21.7086 13.3752C21.1669 13.9169 20.7372 14.5599 20.4441 15.2677C20.1509 15.9754 20 16.734 20 17.5C20 18.266 20.1509 19.0246 20.4441 19.7323C20.7372 20.4401 21.1669 21.0831 21.7086 21.6248C22.2503 22.1665 22.8933 22.5961 23.6011 22.8893C24.3088 23.1824 25.0673 23.3333 25.8334 23.3333C26.5994 23.3333 27.358 23.1824 28.0657 22.8893C28.7734 22.5961 29.4165 22.1665 29.9582 21.6248C30.4998 21.0831 30.9295 20.4401 31.2227 19.7323C31.5158 19.0246 31.6667 18.266 31.6667 17.5C31.6667 16.734 31.5158 15.9754 31.2227 15.2677C30.9295 14.5599 30.4998 13.9169 29.9582 13.3752C29.4165 12.8335 28.7734 12.4039 28.0657 12.1107C27.358 11.8175 26.5994 11.6667 25.8334 11.6667ZM14.1667 23.3333C12.6196 23.3333 11.1359 23.9479 10.0419 25.0419C8.94796 26.1358 8.33337 27.6196 8.33337 29.1667C8.33337 30.7138 8.94796 32.1975 10.0419 33.2915C11.1359 34.3854 12.6196 35 14.1667 35C15.7138 35 17.1975 34.3854 18.2915 33.2915C19.3855 32.1975 20 30.7138 20 29.1667V23.3333M14.1667 23.3333H20"
+              stroke="#1E1E1E"
+              strokeWidth="3.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </svg>
         </div>
-      </main>
+
+        <nav className="header-nav">
+          <a href="/" className="nav-pill nav-pill--active">Trang chủ</a>
+          <a href="/documents" className="nav-pill">Quản lý tài liệu</a>
+          <a href="/chatbot" className="nav-pill">ChatBot</a>
+        </nav>
+
+        <div className="header-auth">
+          <button className="btn-connect">Kết nối với Google Drive</button>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="hero-section">
+        <div className="hero-content">
+          <div className="hero-text">
+            <h1 className="hero-title">VnIT ChatBOT</h1>
+            <p className="hero-subtitle">Demo NCKH -&nbsp; SVC2025-147</p>
+          </div>
+          <a href="/chatbot" className="btn-start-chat">Bắt đầu Chat</a>
+        </div>
+      </section>
     </div>
   );
 }
