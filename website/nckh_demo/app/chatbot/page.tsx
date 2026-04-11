@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 export default function ChatbotPage() {
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const chats = [
     { id: 1, name: "Analog Clock React app", active: true },
@@ -35,30 +35,28 @@ export default function ChatbotPage() {
       </header>
 
       {/* Chatbot Layout */}
-      <div className="chatbot-layout">
+      <div className={`chatbot-layout ${sidebarOpen ? 'chat-sidebar--open' : ''}`}>
         {/* Sidebar */}
-        <aside className={`chat-sidebar ${sidebarCollapsed ? 'chat-sidebar--collapsed' : ''}`}>
+        <aside className="chat-sidebar">
           <div className="chat-sidebar-top">
             {/* Sidebar Header */}
             <div className="chat-sidebar-header">
-              <button className="btn-sidebar-toggle" aria-label="Thu lại thanh bên" onClick={() => setSidebarCollapsed(!sidebarCollapsed)}>
+              <button className="btn-sidebar-toggle" aria-label="Đóng thanh bên" onClick={() => setSidebarOpen(!sidebarOpen)}>
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M2 5H18M2 10H18M2 15H18" stroke="#1E1E1E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </button>
-              {!sidebarCollapsed && <span className="chat-sidebar-title">Flippy chats</span>}
+              <span className="chat-sidebar-title">Flippy chats</span>
               <div className="chat-sidebar-header-actions">
-                {!sidebarCollapsed && (
-                  <button className="btn-new-chat" aria-label="Tạo chat mới">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 5V19M5 12H19" stroke="#1E1E1E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </button>
-                )}
+                <button className="btn-new-chat" aria-label="Tạo chat mới">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 5V19M5 12H19" stroke="#1E1E1E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </button>
               </div>
             </div>
 
-            {!sidebarCollapsed && (
+            {(
               <>
                 {/* Search */}
                 <div className="chat-search">
@@ -84,16 +82,14 @@ export default function ChatbotPage() {
           </div>
 
           {/* User Profile */}
-          {!sidebarCollapsed && (
-            <div className="chat-sidebar-user">
-              <img
-                className="chat-user-avatar"
-                src="https://api.builder.io/api/v1/image/assets/TEMP/5e07d323387954916a3c5818edf3ffab5e0449da?width=48"
-                alt="User avatar"
-              />
-              <span className="chat-user-email">flippy@figma.com</span>
-            </div>
-          )}
+          <div className="chat-sidebar-user">
+            <img
+              className="chat-user-avatar"
+              src="https://api.builder.io/api/v1/image/assets/TEMP/5e07d323387954916a3c5818edf3ffab5e0449da?width=48"
+              alt="User avatar"
+            />
+            <span className="chat-user-email">flippy@figma.com</span>
+          </div>
         </aside>
 
         {/* Main Chat Area */}
