@@ -3,7 +3,7 @@ export default function Home() {
     <div className="page-wrapper">
       {/* Header */}
       <header className="site-header">
-        <div className="header-logo-block">
+        <a href="/" className="header-logo-block">
           <svg
             width="40"
             height="35"
@@ -19,7 +19,7 @@ export default function Home() {
               strokeLinejoin="round"
             />
           </svg>
-        </div>
+        </a>
 
         <nav className="header-nav">
           <a href="/" className="nav-pill nav-pill--active">Trang chủ</a>
