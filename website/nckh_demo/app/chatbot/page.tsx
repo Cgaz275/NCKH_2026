@@ -1,4 +1,10 @@
+'use client';
+
+import { useState } from 'react';
+
 export default function ChatbotPage() {
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+
   const chats = [
     { id: 1, name: "Analog Clock React app", active: true },
     { id: 2, name: "Simple Design System", active: false },
@@ -31,58 +37,63 @@ export default function ChatbotPage() {
       {/* Chatbot Layout */}
       <div className="chatbot-layout">
         {/* Sidebar */}
-        <aside className="chat-sidebar">
+        <aside className={`chat-sidebar ${sidebarCollapsed ? 'chat-sidebar--collapsed' : ''}`}>
           <div className="chat-sidebar-top">
             {/* Sidebar Header */}
             <div className="chat-sidebar-header">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3 12H21M3 6H21M3 18H21" stroke="#1E1E1E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <span className="chat-sidebar-title">Flippy chats</span>
-              <button className="btn-new-chat" aria-label="Tạo chat mới">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clipPath="url(#clip0_sidebar_plus)">
-                    <path d="M12 8V16M8 12H16M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="#1E1E1E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_sidebar_plus">
-                      <rect width="24" height="24" fill="white"/>
-                    </clipPath>
-                  </defs>
+              <button className="btn-sidebar-toggle" aria-label="Thu lại thanh bên" onClick={() => setSidebarCollapsed(!sidebarCollapsed)}>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2 5H18M2 10H18M2 15H18" stroke="#1E1E1E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </button>
+              {!sidebarCollapsed && <span className="chat-sidebar-title">Flippy chats</span>}
+              <div className="chat-sidebar-header-actions">
+                {!sidebarCollapsed && (
+                  <button className="btn-new-chat" aria-label="Tạo chat mới">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 5V19M5 12H19" stroke="#1E1E1E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </button>
+                )}
+              </div>
             </div>
 
-            {/* Search */}
-            <div className="chat-search">
-              <span className="chat-search-placeholder">Search</span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14 14L11.1 11.1M12.6667 7.33333C12.6667 10.2789 10.2789 12.6667 7.33333 12.6667C4.38781 12.6667 2 10.2789 2 7.33333C2 4.38781 4.38781 2 7.33333 2C10.2789 2 12.6667 4.38781 12.6667 7.33333Z" stroke="#1E1E1E" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
+            {!sidebarCollapsed && (
+              <>
+                {/* Search */}
+                <div className="chat-search">
+                  <span className="chat-search-placeholder">Search</span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 14L11.1 11.1M12.6667 7.33333C12.6667 10.2789 10.2789 12.6667 7.33333 12.6667C4.38781 12.6667 2 10.2789 2 7.33333C2 4.38781 4.38781 2 7.33333 2C10.2789 2 12.6667 4.38781 12.6667 7.33333Z" stroke="#1E1E1E" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
 
-            {/* Chat List */}
-            <div className="chat-list-section">
-              <div className="chat-list-label">Chats</div>
-              <ul className="chat-list">
-                {chats.map((chat) => (
-                  <li key={chat.id} className={`chat-list-item${chat.active ? " chat-list-item--active" : ""}`}>
-                    {chat.name}
-                  </li>
-                ))}
-              </ul>
-            </div>
+                {/* Chat List */}
+                <div className="chat-list-section">
+                  <div className="chat-list-label">Chats</div>
+                  <ul className="chat-list">
+                    {chats.map((chat) => (
+                      <li key={chat.id} className={`chat-list-item${chat.active ? " chat-list-item--active" : ""}`}>
+                        {chat.name}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </>
+            )}
           </div>
 
           {/* User Profile */}
-          <div className="chat-sidebar-user">
-            <img
-              className="chat-user-avatar"
-              src="https://api.builder.io/api/v1/image/assets/TEMP/5e07d323387954916a3c5818edf3ffab5e0449da?width=48"
-              alt="User avatar"
-            />
-            <span className="chat-user-email">flippy@figma.com</span>
-          </div>
+          {!sidebarCollapsed && (
+            <div className="chat-sidebar-user">
+              <img
+                className="chat-user-avatar"
+                src="https://api.builder.io/api/v1/image/assets/TEMP/5e07d323387954916a3c5818edf3ffab5e0449da?width=48"
+                alt="User avatar"
+              />
+              <span className="chat-user-email">flippy@figma.com</span>
+            </div>
+          )}
         </aside>
 
         {/* Main Chat Area */}
@@ -159,11 +170,6 @@ import`}{` { defineProperties } `}<span className="code-keyword">from</span>{` `
             <p className="chat-input-placeholder">What would you like to know?</p>
             <div className="chat-input-actions">
               <div className="chat-input-tools">
-                <button className="btn-tool" aria-label="Thêm ảnh">
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4.16667 17.5H15.8333C16.7538 17.5 17.5 16.7538 17.5 15.8333V4.16667C17.5 3.24619 16.7538 2.5 15.8333 2.5H4.16667C3.24619 2.5 2.5 3.24619 2.5 4.16667V15.8333C2.5 16.7538 3.24619 17.5 4.16667 17.5ZM4.16667 17.5L13.3333 8.33333L17.5 12.5M8.33333 7.08333C8.33333 7.77369 7.77369 8.33333 7.08333 8.33333C6.39298 8.33333 5.83333 7.77369 5.83333 7.08333C5.83333 6.39298 6.39298 5.83333 7.08333 5.83333C7.77369 5.83333 8.33333 6.39298 8.33333 7.08333Z" stroke="#1E1E1E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </button>
                 <button className="btn-tool" aria-label="Thêm code">
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M13.3333 15L18.3333 10L13.3333 5M6.66663 5L1.66663 10L6.66663 15" stroke="#1E1E1E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
