@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: #ffffff;
@@ -32,7 +32,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
@@ -40,7 +41,12 @@ html, body {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-family:
+    Inter,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
   line-height: 1;
 }
 
@@ -64,7 +70,8 @@ body {
   gap: 0 var(--sds-size-space-600);
   align-self: stretch;
   flex-wrap: nowrap;
-  border-bottom: var(--sds-size-stroke-border) solid var(--sds-color-border-default-default);
+  border-bottom: var(--sds-size-stroke-border) solid
+    var(--sds-color-border-default-default);
   background: #fff;
   position: relative;
   width: 100%;
@@ -106,7 +113,12 @@ body {
   background: transparent;
   text-decoration: none;
   color: var(--sds-color-text-default-default);
-  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-family:
+    Inter,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
   font-size: var(--sds-size-space-400);
   font-style: normal;
   font-weight: 400;
@@ -143,10 +155,16 @@ body {
   align-items: center;
   gap: 6px;
   border-radius: var(--sds-size-radius-200);
-  border: var(--sds-size-stroke-border) solid var(--sds-color-background-brand-default);
+  border: var(--sds-size-stroke-border) solid
+    var(--sds-color-background-brand-default);
   background: var(--sds-color-background-brand-default);
   color: var(--sds-color-text-brand-on-brand);
-  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-family:
+    Inter,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
   font-size: var(--sds-size-space-400);
   font-style: normal;
   font-weight: 400;
@@ -197,7 +215,12 @@ body {
   align-self: stretch;
   color: #fff;
   text-align: center;
-  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-family:
+    Inter,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
   font-size: 72px;
   font-style: normal;
   font-weight: 700;
@@ -211,7 +234,12 @@ body {
   align-self: stretch;
   color: var(--sds-color-text-default-secondary);
   text-align: center;
-  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-family:
+    Inter,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -229,7 +257,12 @@ body {
   border-radius: var(--sds-size-radius-200);
   background: #fff;
   color: var(--sds-color-text-default-default);
-  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-family:
+    Inter,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
   font-size: var(--sds-size-space-400);
   font-style: normal;
   font-weight: 500;
@@ -287,10 +320,16 @@ body {
   padding: 10px 16px;
   padding-right: 100px;
   border-radius: var(--sds-size-radius-200);
-  border: var(--sds-size-stroke-border) solid var(--sds-color-border-default-default);
+  border: var(--sds-size-stroke-border) solid
+    var(--sds-color-border-default-default);
   background: #fff;
   color: var(--sds-color-text-default-default);
-  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-family:
+    Inter,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 100%;
@@ -340,7 +379,12 @@ body {
 
 .documents-title {
   color: var(--sds-color-text-default-default);
-  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-family:
+    Inter,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
   font-size: 24px;
   font-weight: 700;
   line-height: 100%;
@@ -350,7 +394,12 @@ body {
 
 .documents-subtitle {
   color: var(--sds-color-text-default-secondary);
-  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-family:
+    Inter,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 140%;
@@ -370,7 +419,8 @@ body {
   display: flex;
   flex-direction: column;
   border-radius: var(--sds-size-radius-200);
-  border: var(--sds-size-stroke-border) solid var(--sds-color-border-default-default);
+  border: var(--sds-size-stroke-border) solid
+    var(--sds-color-border-default-default);
   overflow: hidden;
   background: #fff;
 }
@@ -394,12 +444,18 @@ body {
   display: flex;
   flex-direction: column;
   gap: var(--sds-size-space-200);
-  padding: var(--sds-size-space-300) var(--sds-size-space-300) var(--sds-size-space-300);
+  padding: var(--sds-size-space-300) var(--sds-size-space-300)
+    var(--sds-size-space-300);
 }
 
 .doc-card-name {
   color: var(--sds-color-text-default-default);
-  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-family:
+    Inter,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
   font-size: 14px;
   font-weight: 600;
   line-height: 140%;
@@ -411,10 +467,16 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: var(--sds-size-radius-200);
-  border: var(--sds-size-stroke-border) solid var(--sds-color-background-brand-default);
+  border: var(--sds-size-stroke-border) solid
+    var(--sds-color-background-brand-default);
   background: var(--sds-color-background-brand-default);
   color: var(--sds-color-text-brand-on-brand);
-  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-family:
+    Inter,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 100%;
@@ -447,7 +509,12 @@ body {
   border: none;
   background: transparent;
   color: var(--sds-color-text-default-default);
-  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-family:
+    Inter,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 100%;
@@ -486,7 +553,12 @@ body {
   border: none;
   background: transparent;
   color: var(--sds-color-text-default-default);
-  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-family:
+    Inter,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 100%;
@@ -514,7 +586,12 @@ body {
   justify-content: center;
   align-items: center;
   color: var(--sds-color-text-default-default);
-  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-family:
+    Inter,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
   font-size: 16px;
   font-weight: 700;
   line-height: 140%;
@@ -603,7 +680,12 @@ body {
 .chat-sidebar-title {
   flex: 1;
   color: var(--sds-color-text-default-default);
-  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-family:
+    Inter,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 140%;
@@ -644,7 +726,12 @@ body {
 .chat-search-placeholder {
   flex: 1;
   color: var(--sds-color-text-default-tertiary);
-  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-family:
+    Inter,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 100%;
@@ -658,7 +745,12 @@ body {
 
 .chat-list-label {
   color: var(--sds-color-text-default-secondary);
-  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-family:
+    Inter,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
   font-size: 14px;
   font-weight: 600;
   line-height: 140%;
@@ -677,7 +769,12 @@ body {
   padding: 4px 6px;
   border-radius: var(--sds-size-radius-200);
   color: var(--sds-color-text-default-default);
-  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-family:
+    Inter,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 140%;
@@ -718,7 +815,12 @@ body {
 .chat-user-email {
   flex: 1;
   color: var(--sds-color-text-default-default);
-  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-family:
+    Inter,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 140%;
@@ -757,7 +859,12 @@ body {
   border: 1px solid var(--sds-color-border-default-default);
   background: #fff;
   color: var(--sds-color-text-default-default);
-  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-family:
+    Inter,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 140%;
@@ -784,7 +891,12 @@ body {
 .chat-bot-text {
   flex: 1;
   color: var(--sds-color-text-default-default);
-  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-family:
+    Inter,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 140%;
@@ -810,7 +922,12 @@ body {
   gap: 0;
   flex-shrink: 0;
   color: var(--sds-color-text-default-tertiary);
-  font-family: 'Roboto Mono', -apple-system, Roboto, Helvetica, monospace;
+  font-family:
+    'Roboto Mono',
+    -apple-system,
+    Roboto,
+    Helvetica,
+    monospace;
   font-size: 16px;
   font-weight: 400;
   line-height: 130%;
@@ -827,7 +944,12 @@ body {
   background: var(--sds-color-background-brand-tertiary);
   margin: 0;
   overflow-x: auto;
-  font-family: 'Roboto Mono', -apple-system, Roboto, Helvetica, monospace;
+  font-family:
+    'Roboto Mono',
+    -apple-system,
+    Roboto,
+    Helvetica,
+    monospace;
   font-size: 16px;
   font-weight: 400;
   line-height: 130%;
@@ -835,12 +957,24 @@ body {
   white-space: pre;
 }
 
-.code-keyword { color: rgba(191, 106, 2, 1); }
-.code-string  { color: rgba(20, 174, 92, 1); }
-.code-fn      { color: rgba(234, 63, 184, 1); }
-.code-prop    { color: rgba(63, 129, 234, 1); }
-.code-number  { color: rgba(236, 34, 31, 1); }
-.code-comment { color: rgba(12, 12, 13, 0.7); }
+.code-keyword {
+  color: rgba(191, 106, 2, 1);
+}
+.code-string {
+  color: rgba(20, 174, 92, 1);
+}
+.code-fn {
+  color: rgba(234, 63, 184, 1);
+}
+.code-prop {
+  color: rgba(63, 129, 234, 1);
+}
+.code-number {
+  color: rgba(236, 34, 31, 1);
+}
+.code-comment {
+  color: rgba(12, 12, 13, 0.7);
+}
 
 /* Chat Input */
 .chat-input-box {
@@ -856,7 +990,12 @@ body {
 
 .chat-input-placeholder {
   color: var(--sds-color-text-default-tertiary);
-  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-family:
+    Inter,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 140%;
@@ -908,11 +1047,12 @@ body {
   height: 54px;
   padding: 32px 32px 160px;
   align-self: stretch;
-  border-top: var(--sds-size-stroke-border) solid var(--sds-color-border-default-default);
+  border-top: var(--sds-size-stroke-border) solid
+    var(--sds-color-border-default-default);
   background: #fff;
 }
 
-/* ── Responsive ── */
+/* ── Responsive (cũ) ── */
 @media (max-width: 768px) {
   .chat-sidebar {
     width: 240px;
@@ -995,7 +1135,6 @@ body {
 }
 
 @media (max-width: 640px) {
-  /* Chatbot sidebar - hide by default */
   .chat-sidebar {
     position: fixed;
     left: 0;
@@ -1009,12 +1148,10 @@ body {
     box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
   }
 
-  /* Show sidebar when open */
   .chatbot-layout.chat-sidebar--open .chat-sidebar {
     transform: translateX(0);
   }
 
-  /* Chatbot layout adjustments */
   .chatbot-layout {
     position: relative;
     display: flex;
@@ -1038,7 +1175,6 @@ body {
     flex: 1;
   }
 
-  /* Fix input box at bottom */
   .chat-input-box {
     position: sticky;
     bottom: 0;
@@ -1050,7 +1186,6 @@ body {
     background: #fff;
   }
 
-  /* Message bubbles */
   .chat-user-bubble {
     max-width: 90%;
     font-size: 15px;
@@ -1070,7 +1205,6 @@ body {
     height: 18px;
   }
 
-  /* Code block */
   .code-block {
     font-size: 12px;
     border-radius: 12px;
@@ -1088,7 +1222,6 @@ body {
     gap: 0;
   }
 
-  /* Chat input */
   .chat-input-box {
     gap: 16px;
     padding: 12px;
@@ -1190,7 +1323,6 @@ body {
     padding: 6px 10px;
   }
 
-  /* Chatbot mobile optimizations */
   .chat-sidebar {
     top: 60px;
     height: calc(100vh - 60px);
@@ -1211,7 +1343,6 @@ body {
     padding-bottom: 8px;
   }
 
-  /* Fix input at bottom for 480px screen */
   .chat-input-box {
     position: sticky;
     bottom: 0;
@@ -1222,10 +1353,6 @@ body {
     border-top: 1px solid var(--sds-color-border-default-default);
     background: #fff;
     border-radius: 0;
-  }
-
-  .chat-user-message-row {
-    justify-content: flex-end;
   }
 
   .chat-user-bubble {
@@ -1248,7 +1375,6 @@ body {
     margin-top: 0;
   }
 
-  /* Code block ultra-compact */
   .code-block {
     font-size: 11px;
     border-radius: 8px;
@@ -1273,7 +1399,6 @@ body {
     line-height: 1.3;
   }
 
-  /* Chat input compact */
   .chat-input-box {
     gap: 12px;
     border-radius: 0;
@@ -1299,5 +1424,90 @@ body {
   .btn-send svg {
     width: 18px;
     height: 18px;
+  }
+}
+
+/* ==================== HAMBURGER MENU - FINAL FIXED ==================== */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--sds-size-space-300);
+  margin-left: auto;
+}
+
+.hamburger-menu {
+  display: none !important;
+  background: transparent;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.hamburger-menu:hover {
+  opacity: 0.7;
+}
+
+/* Mobile Menu Overlay */
+.mobile-nav-overlay {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-bottom: var(--sds-size-stroke-border) solid
+    var(--sds-color-border-default-default);
+  padding: 24px 20px;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mobile-nav-link {
+  padding: 14px 16px;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--sds-color-text-default-default);
+  text-decoration: none;
+  border-radius: var(--sds-size-radius-200);
+  transition: background 0.2s ease;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link:active {
+  background: var(--sds-color-background-brand-tertiary);
+}
+
+.mobile-connect {
+  margin-top: 8px;
+  width: 100%;
+}
+
+/* RESPONSIVE - Hamburger chỉ hiện khi mobile */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  .hamburger-menu {
+    display: flex !important;
+  }
+
+  .btn-connect {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-nav-overlay {
+    padding: 20px 16px;
   }
 }

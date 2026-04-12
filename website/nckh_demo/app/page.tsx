@@ -1,9 +1,21 @@
+'use client';
+
+import { useState } from 'react';
+
 export default function Home() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
+
   return (
     <div className="page-wrapper">
-      {/* Header */}
+      {/* ==================== HEADER ==================== */}
       <header className="site-header">
-        <a href="/" className="header-logo-block">
+        {/* Logo */}
+        <a
+          href="/"
+          className="header-logo-block"
+        >
           <svg
             width="40"
             height="35"
@@ -21,25 +33,106 @@ export default function Home() {
           </svg>
         </a>
 
-        <nav className="header-nav">
-          <a href="/" className="nav-pill nav-pill--active">Trang chủ</a>
-          <a href="/documents" className="nav-pill">Quản lý tài liệu</a>
-          <a href="/chatbot" className="nav-pill">ChatBot</a>
+        {/* Desktop Navigation */}
+        <nav className="header-nav desktop-nav">
+          <a
+            href="/"
+            className="nav-pill nav-pill--active"
+          >
+            Trang chủ
+          </a>
+          <a
+            href="/documents"
+            className="nav-pill"
+          >
+            Quản lý tài liệu
+          </a>
+          <a
+            href="/chatbot"
+            className="nav-pill"
+          >
+            ChatBot
+          </a>
         </nav>
 
-        <div className="header-auth">
-          <button className="btn-connect">Kết nối với Google Drive</button>
+        {/* Right side: Hamburger + Auth */}
+        <div className="header-right">
+          {/* Hamburger Button (chỉ hiện trên mobile) */}
+          <button
+            className="hamburger-menu"
+            onClick={toggleMenu}
+            aria-label="Toggle navigation menu"
+          >
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#1E1E1E"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+
+          {/* Auth Button */}
+          <div className="header-auth">
+            <button className="btn-connect">Kết nối với Google Drive</button>
+          </div>
         </div>
+
+        {/* ==================== MOBILE MENU ==================== */}
+        {isMenuOpen && (
+          <div className="mobile-nav-overlay">
+            <nav className="mobile-nav">
+              <a
+                href="/"
+                className="mobile-nav-link"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Trang chủ
+              </a>
+              <a
+                href="/documents"
+                className="mobile-nav-link"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Quản lý tài liệu
+              </a>
+              <a
+                href="/chatbot"
+                className="mobile-nav-link"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                ChatBot
+              </a>
+            </nav>
+
+            <button
+              className="btn-connect mobile-connect"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Kết nối với Google Drive
+            </button>
+          </div>
+        )}
       </header>
 
-      {/* Hero Section */}
+      {/* ==================== HERO SECTION ==================== */}
       <section className="hero-section">
         <div className="hero-content">
           <div className="hero-text">
             <h1 className="hero-title">VnIT ChatBOT</h1>
             <p className="hero-subtitle">Demo NCKH -&nbsp; SVC2025-147</p>
           </div>
-          <a href="/chatbot" className="btn-start-chat">Bắt đầu Chat</a>
+          <a
+            href="/chatbot"
+            className="btn-start-chat"
+          >
+            Bắt đầu Chat
+          </a>
         </div>
       </section>
     </div>
